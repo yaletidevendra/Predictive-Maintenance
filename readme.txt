@@ -4,33 +4,19 @@ Test trajectories: 100
 Conditions: ONE (Sea Level)
 Fault Modes: ONE (HPC Degradation)
 
-Data Set: FD002
-Train trjectories: 260
-Test trajectories: 259
-Conditions: SIX 
-Fault Modes: ONE (HPC Degradation)
-
-Data Set: FD003
-Train trjectories: 100
-Test trajectories: 100
-Conditions: ONE (Sea Level)
-Fault Modes: TWO (HPC Degradation, Fan Degradation)
-
-Data Set: FD004
-Train trjectories: 248
-Test trajectories: 249
-Conditions: SIX 
-Fault Modes: TWO (HPC Degradation, Fan Degradation)
-
-
 
 Experimental Scenario
 
-Data sets consists of multiple multivariate time series. Each data set is further divided into training and test subsets. Each time series is from a different engine – i.e., the data can be considered to be from a fleet of engines of the same type. Each engine starts with different degrees of initial wear and manufacturing variation which is unknown to the user. This wear and variation is considered normal, i.e., it is not considered a fault condition. There are three operational settings that have a substantial effect on engine performance. These settings are also included in the data. The data is contaminated with sensor noise.
+The dataset is composed of multiple multivariate time series, each representing a different engine from a fleet of identical units. Every dataset is split into training and testing subsets. Each engine begins operation with unknown levels of initial wear and manufacturing variability; however, these differences are considered normal and not indicative of faults.
 
-The engine is operating normally at the start of each time series, and develops a fault at some point during the series. In the training set, the fault grows in magnitude until system failure. In the test set, the time series ends some time prior to system failure. The objective of the competition is to predict the number of remaining operational cycles before failure in the test set, i.e., the number of operational cycles after the last cycle that the engine will continue to operate. Also provided a vector of true Remaining Useful Life (RUL) values for the test data.
+Three operational settings that significantly influence engine performance are included in the data, which also contains sensor noise.
 
-The data are provided as a zip-compressed text file with 26 columns of numbers, separated by spaces. Each row is a snapshot of data taken during a single operational cycle, each column is a different variable. The columns correspond to:
+At the beginning of each time series, the engine operates under normal conditions. Over time, a fault develops. In the training set, this fault progressively increases until complete system failure occurs. In contrast, the test set ends before failure happens.
+
+The goal is to predict the Remaining Useful Life (RUL) for each engine in the test set, defined as the number of operational cycles remaining after the final recorded cycle. A vector containing the true RUL values for the test data is also provided.
+
+The data is supplied as text files with 26 space-separated columns. Each row corresponds to a single operational cycle, and each column represents a different variable. The columns correspond to:
+
 1)	unit number
 2)	time, in cycles
 3)	operational setting 1
@@ -42,4 +28,3 @@ The data are provided as a zip-compressed text file with 26 columns of numbers, 
 26)	sensor measurement  26
 
 
-Reference: A. Saxena, K. Goebel, D. Simon, and N. Eklund, “Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation”, in the Proceedings of the Ist International Conference on Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
