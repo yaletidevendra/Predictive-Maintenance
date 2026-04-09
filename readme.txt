@@ -1,3 +1,18 @@
+Predictive Maintenance for NASA Turbofan Engines
+
+Problem Overview
+In aviation, engine reliability is critical. Maintenance is typically done in two ways:
+
+Reactive maintenance: Fixing components after failure, which can be risky and expensive Scheduled maintenance: Replacing parts at fixed intervals, even if they are still usable
+
+A more efficient approach is to use sensor data to estimate when an engine is likely to fail. This allows maintenance to be performed only when needed.
+
+Objective: Estimate the Remaining Useful Life (RUL) of turbofan engines using sensor data.
+
+Dataset (NASA CMAPSS – FD001) Input: Time-series data from 21 sensors (e.g., temperature, pressure, speed) Scenario: Engines operate normally at first, then gradually degrade until failure Target: Remaining Useful Life (RUL), measured in cycles
+Methodology A. Data Cleaning and Feature Selection
+
+
 Data Set: FD001
 Train trjectories: 100
 Test trajectories: 100
